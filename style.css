@@ -1,0 +1,90 @@
+:root{
+  --bg:#f7fbff; --card:#ffffff; --accent:#00a8d4; --muted:#666;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:#123}
+.container{max-width:980px;margin:0 auto;padding:20px}
+.site-header{background:linear-gradient(90deg,var(--accent),#0077b6);color:#fff;padding:12px 0}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.site-header nav a{color:#fff;margin-left:12px;text-decoration:none;font-weight:600}
+#hero{padding:24px 0}
+h1,h2,h3{margin:0 0 8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 2px 8px rgba(16,24,40,0.06)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border:1px solid #e6eef6;padding:8px;text-align:left}
+.featured-row{background:#fff9e8}
+.featured-row td{border-color:#f3c969}
+.recommended-badge,.featured-badge{display:inline-block;padding:3px 8px;border-radius:999px;color:#fff;font-size:12px;font-weight:700;margin-right:6px}
+.recommended-badge{background:#0077b6}
+.featured-badge{background:#b7791f}
+label{display:block;margin-top:8px;color:var(--muted)}
+input[type=number]{width:100%;padding:8px;margin-top:4px;border:1px solid #d7e6f2;border-radius:6px}
+button{background:var(--accent);color:#fff;border:none;padding:10px 12px;border-radius:6px;margin-top:8px;cursor:pointer}
+.finance .cols{display:flex;gap:12px}
+.finance .result{margin-top:12px;padding:10px;background:#eef9ff;border-radius:6px}
+.table thead{background:#eaf6ff}
+select, input[type=text], input[type=datetime-local], input[type=number]{width:100%;padding:8px;margin-top:4px;border:1px solid #d7e6f2;border-radius:6px;background:#fff}
+input[type=text], input[type=datetime-local]{width:100%}
+.card h4{margin-bottom:6px}
+.muted{color:var(--muted)}
+.site-footer{padding:16px 0;text-align:center;color:var(--muted)}
+
+/* ===== TEAM WORKS STYLES ===== */
+.tabs-container{background:var(--card);border-radius:8px;padding:0;margin-bottom:16px;box-shadow:0 2px 8px rgba(16,24,40,0.06)}
+.tabs{display:flex;border-bottom:2px solid #e6eef6;flex-wrap:wrap}
+.tab-btn{background:none;border:none;color:var(--muted);padding:12px 16px;cursor:pointer;border-bottom:3px solid transparent;margin-top:0;border-radius:0;font-weight:500;transition:all 0.2s}
+.tab-btn:hover{color:var(--accent);background:#f0f7ff}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.team-roster{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:16px}
+.team-card{background:var(--card);padding:14px;border-radius:8px;border-left:4px solid var(--accent);box-shadow:0 2px 8px rgba(16,24,40,0.06)}
+.team-card h4{color:var(--accent);margin-bottom:4px}
+.team-card .role{color:var(--muted);font-style:italic;margin:4px 0}
+.team-card .badge{display:inline-block;background:#eaf6ff;color:#0077b6;padding:4px 8px;border-radius:4px;font-size:0.85em;margin:4px 4px 4px 0;font-weight:500}
+.team-card .team-info{margin:8px 0}
+.team-card .team-specialties{margin-top:8px;padding-top:8px;border-top:1px solid #e6eef6}
+
+.perf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.perf-card{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 2px 8px rgba(16,24,40,0.06);border-top:3px solid var(--accent)}
+.perf-card h4{color:var(--accent);margin-bottom:12px;font-size:1.1em}
+.perf-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.metric{background:#f7fbff;padding:8px;border-radius:4px;text-align:center}
+.metric .label{display:block;font-size:0.85em;color:var(--muted);margin-bottom:4px}
+.metric .value{display:block;font-size:1.2em;font-weight:600;color:var(--accent)}
+
+.announcements{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.announcement{padding:12px;border-radius:6px;border-left:4px solid #ccc}
+.announcement.info{background:#eef9ff;border-left-color:#00a8d4;color:#0077b6}
+.announcement.success{background:#ecfdf5;border-left-color:#10b981;color:#059669}
+.announcement.alert{background:#fef3c7;border-left-color:#f59e0b;color:#b45309}
+.announcement p{margin:4px 0}
+.announcement p:first-child{color:inherit;opacity:0.7;font-size:0.9em}
+
+.payroll-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.payroll-card{background:linear-gradient(135deg,#f7fbff,#ffffff);padding:16px;border-radius:8px;border:2px solid #e6eef6;box-shadow:0 2px 8px rgba(16,24,40,0.06)}
+.payroll-card h4{color:var(--accent);margin:0 0 12px;font-size:1em}
+.payroll-count{font-size:0.9em;color:var(--muted);margin-bottom:8px}
+.payroll-cost{font-size:1.8em;font-weight:700;color:var(--accent);margin-bottom:8px}
+.payroll-card.total{background:linear-gradient(135deg,#00a8d4,#0077b6);color:#fff;border-color:var(--accent)}
+.payroll-card.total h4{color:#fff;margin-bottom:12px}
+.payroll-card.total .payroll-total{font-size:2.2em;font-weight:700;color:#fff}
+
+.team-tools .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+.team-tools .tool-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.team-tools .secondary-btn{background:#64748b}
+
+/* ===== END TEAM WORKS STYLES ===== */
+
+@media(max-width:680px){.site-header .container{flex-direction:column;gap:12px}.finance .cols{flex-direction:column}.tabs{flex-direction:column}.team-roster{grid-template-columns:1fr}.perf-grid{grid-template-columns:1fr}}
+
+@media print{
+  .site-header, nav, #finance, #booking, #admin, #tips, #team, #partners, .site-footer, #comparison, #package-pricing{display:none !important}
+  body{background:#fff;color:#000}
+  .container{max-width:100%;padding:0}
+  #hero{padding:0 0 12px}
+  .card{box-shadow:none;border:1px solid #ddd}
+  .featured-row{background:#fff7e0 !important}
+}
