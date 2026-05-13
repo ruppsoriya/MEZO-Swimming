@@ -20,7 +20,6 @@
         <a href="brochure.html">សន្លឹកព័ត៌មាន</a>
         <a href="#partners">ដៃគូ</a>
         <a href="#tips">គន្លឹះ</a>
-        <a href="#team">ក្រុមការងារ</a>
       </nav>
     </div>
   </header>
@@ -146,113 +145,6 @@
           </div>
         </div>
         <div id="finance-result" class="result"></div>
-      </div>
-    </section>
-
-    <section id="team">
-      <h2 id="team-heading">ក្រុមការងារ</h2>
-      <div class="tabs-container">
-        <div class="tabs">
-          <button class="tab-btn active" onclick="switchTeamTab('roster')">👥 <span id="tab-roster-label">សមាជិក</span></button>
-          <button class="tab-btn" onclick="switchTeamTab('assignments')">📋 <span id="tab-assignments-label">ចែកការងារ</span></button>
-          <button class="tab-btn" onclick="switchTeamTab('performance')">📊 <span id="tab-performance-label">លទ្ធផល</span></button>
-          <button class="tab-btn" onclick="switchTeamTab('announcements')">📢 <span id="tab-announcements-label">ដំណឹង</span></button>
-        </div>
-      </div>
-
-      <div id="tab-roster" class="tab-content active">
-        <h3 id="roster-heading">សមាជិកកំពុងធ្វើការ</h3>
-        <div id="team-roster-list" class="team-roster"></div>
-      </div>
-
-      <div id="tab-assignments" class="tab-content">
-        <h3 id="assignments-heading">គ្រូតាមកញ្ចប់</h3>
-        <div class="card">
-          <table class="table">
-            <thead>
-              <tr><th id="th-package">កញ្ចប់</th><th id="th-assigned">គ្រូដែលទទួល</th></tr>
-            </thead>
-            <tbody id="team-assignments-list"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <div id="tab-performance" class="tab-content">
-        <h3 id="performance-heading">លទ្ធផលក្រុម</h3>
-        <div class="card">
-          <p id="perf-desc"><strong id="perf-label">ទិន្នន័យសំខាន់:</strong> <span id="perf-metrics">ពិន្ទុ ចំនួនវគ្គ និងចំណូល</span></p>
-        </div>
-        <div id="team-performance-stats" class="perf-grid"></div>
-      </div>
-
-      <div id="tab-announcements" class="tab-content">
-        <h3 id="announcements-heading">ដំណឹងក្រុម</h3>
-        <div id="team-announcements" class="announcements"></div>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 id="payroll-heading">💼 សរុបប្រាក់ខែ</h3>
-        <div id="payroll-summary"></div>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 id="mgmt-heading">ឧបករណ៍គ្រប់គ្រងក្រុម</h3>
-        <button id="btn-add-coach" onclick="showAddCoachForm()" style="margin-right:8px">➕ <span id="btn-add-label">បន្ថែមសមាជិក</span></button>
-        <button id="btn-export-team" onclick="exportTeamData()" style="margin-right:8px">📥 <span id="btn-export-label">ទាញទិន្នន័យ</span></button>
-        <button id="btn-clear-team" onclick="clearTeamRoster()" style="margin-right:8px">🧹 សម្អាតបញ្ជី</button>
-        <button id="btn-load-team" onclick="loadFullTeamList()">📋 បញ្ចូលក្រុមពេញ</button>
-      </div>
-
-      <div class="card team-tools" id="team-member-form-card" style="margin-top:16px;display:none">
-        <h3>បន្ថែមសមាជិកថ្មី</h3>
-        <form id="team-member-form">
-          <div class="form-grid">
-            <div>
-              <label for="tm-name">ឈ្មោះពេញ</label>
-              <input id="tm-name" type="text" placeholder="ឧ. គ្រូ ដារ៉ា" required />
-            </div>
-            <div>
-              <label for="tm-role">តួនាទី</label>
-              <input id="tm-role" type="text" placeholder="ឧ. គ្រូហែលទឹក" required />
-            </div>
-            <div>
-              <label for="tm-employment">ប្រភេទការងារ</label>
-              <select id="tm-employment" required>
-                <option value="Full-Time">ពេញម៉ោង</option>
-                <option value="Part-Time">ក្រៅម៉ោង</option>
-              </select>
-            </div>
-            <div>
-              <label for="tm-salary">ប្រាក់ខែ ឬ ថ្លៃម៉ោង</label>
-              <input id="tm-salary" type="number" min="0" step="1" placeholder="បញ្ចូលលេខ" required />
-            </div>
-            <div>
-              <label for="tm-email">អ៊ីមែល</label>
-              <input id="tm-email" type="text" placeholder="ឧ. dara@swimxclub.com" />
-            </div>
-            <div>
-              <label for="tm-phone">ទូរស័ព្ទ</label>
-              <input id="tm-phone" type="text" placeholder="ឧ. +855 123 4580" />
-            </div>
-            <div>
-              <label for="tm-hours">ម៉ោងអតិបរមាក្នុងសប្តាហ៍</label>
-              <input id="tm-hours" type="number" min="1" step="1" value="40" />
-            </div>
-            <div>
-              <label for="tm-specialties">ជំនាញពិសេស</label>
-              <input id="tm-specialties" type="text" placeholder="កុមារ, អ្នកចាប់ផ្តើម" />
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button type="submit">រក្សាទុក</button>
-            <button type="button" class="secondary-btn" onclick="cancelAddTeamMember()">បោះបង់</button>
-          </div>
-        </form>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3>តួនាទីណែនាំសម្រាប់ក្រុម</h3>
-        <div id="team-position-recommendations"></div>
       </div>
     </section>
 
