@@ -1306,7 +1306,7 @@ function renderTeamPerformanceDashboard(){
   const activeCoaches = teamMembers.filter(m => {
     const roleText = String(m.role || '')
     const isCoachRole = /coach|instructor|គ្រូ/i.test(roleText)
-    return m.active && (isCoachRole || m.sessionsCompleted || m.studentRating)
+    return m.active && (isCoachRole || m.studentRating || m.totalRevenue)
   })
   
   activeCoaches.forEach(coach => {
