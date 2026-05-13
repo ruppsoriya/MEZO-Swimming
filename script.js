@@ -1273,8 +1273,9 @@ function renderTeamRoster(){
       </div>
       ${salaryDisplay}
       <p><small style="color:#999">${t('joined')}: ${member.joinDate}</small></p>
-      <button onclick="deleteTeamMember('${member.id}')" style="margin-top:8px;background:#e74c3c;color:#fff;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:0.85em">🗑 លុប</button>
+      <button class="delete-member-btn" style="margin-top:8px;background:#e74c3c;color:#fff;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:0.85em">🗑 លុប</button>
     `
+    card.querySelector('.delete-member-btn').addEventListener('click', () => deleteTeamMember(member.id))
     container.appendChild(card)
   })
 }
