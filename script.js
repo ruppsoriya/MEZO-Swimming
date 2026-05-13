@@ -1244,7 +1244,6 @@ function renderTeamRoster(){
     const card = document.createElement('div')
     card.className = 'team-card'
     const rating = member.studentRating ? `⭐ ${member.studentRating}` : 'មិនមាន'
-    const sessionsInfo = member.sessionsCompleted ? `${member.sessionsCompleted} ${t('sessions')}` : 'មិនមាន'
     const revenueInfo = member.totalRevenue ? `$${member.totalRevenue}` : '—'
     
     // Salary display
@@ -1263,7 +1262,6 @@ function renderTeamRoster(){
       <p class="role">${member.role} <span style="background:#e0f7ff;color:#0077b6;padding:2px 6px;border-radius:3px;font-size:0.85em;font-weight:500">${member.employment === 'Full-Time' ? t('fullTime') : t('partTime')}</span></p>
       <div class="team-info">
         <span class="badge">${t('rating')}: ${rating}</span>
-        <span class="badge">${sessionsInfo}</span>
         <span class="badge">${t('revenue')}: ${revenueInfo}</span>
       </div>
       <p><small>${member.certifications.join(', ') || t('certifications')}</small></p>
@@ -1305,12 +1303,11 @@ function renderTeamPerformanceDashboard(){
   if(!container) return
   
   container.innerHTML = ''
-  const activeCoaches = teamMembers.filter(m => m.active && m.sessionsCompleted)
+  const activeCoaches = teamMembers.filter(m => m.active && m.id.startsWith('coach_'))
   
   activeCoaches.forEach(coach => {
     const avgRating = coach.studentRating || 0
     const revenue = coach.totalRevenue || 0
-    const sessionsPerWeek = coach.maxHoursPerWeek ? (coach.sessionsCompleted / 4).toFixed(1) : 'មិនមាន'
     
     // Determine employment display
     const empBg = coach.employment === 'Full-Time' ? '#e0f7ff' : '#fef3c7'
@@ -1328,16 +1325,8 @@ function renderTeamPerformanceDashboard(){
           <span class="value" style="color:#f59e0b">⭐ ${avgRating}</span>
         </div>
         <div class="metric">
-          <span class="label">${t('sessions')}</span>
-          <span class="value">${coach.sessionsCompleted}</span>
-        </div>
-        <div class="metric">
           <span class="label">${t('revenue')}</span>
           <span class="value">$${revenue}</span>
-        </div>
-        <div class="metric">
-          <span class="label">${t('avgWeek')}</span>
-          <span class="value">${sessionsPerWeek}</span>
         </div>
       </div>
       <div style="background:#f0f0f0; padding:8px; border-radius:4px; margin-top:8px; font-size:0.9em">
@@ -1661,5 +1650,4 @@ document.addEventListener('DOMContentLoaded',()=>{
   const admBtn = document.getElementById('adm-add')
   if(admBtn) admBtn.addEventListener('click',handleAdminAdd)
 })
-
 
