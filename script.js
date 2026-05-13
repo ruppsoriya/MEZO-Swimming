@@ -1303,7 +1303,11 @@ function renderTeamPerformanceDashboard(){
   if(!container) return
   
   container.innerHTML = ''
-  const activeCoaches = teamMembers.filter(m => m.active && m.id.startsWith('coach_'))
+  const activeCoaches = teamMembers.filter(m => {
+    const roleText = String(m.role || '')
+    const isCoachRole = /coach|instructor|គ្រូ/i.test(roleText)
+    return m.active && (isCoachRole || m.sessionsCompleted || m.studentRating)
+  })
   
   activeCoaches.forEach(coach => {
     const avgRating = coach.studentRating || 0
@@ -1650,4 +1654,3 @@ document.addEventListener('DOMContentLoaded',()=>{
   const admBtn = document.getElementById('adm-add')
   if(admBtn) admBtn.addEventListener('click',handleAdminAdd)
 })
-
