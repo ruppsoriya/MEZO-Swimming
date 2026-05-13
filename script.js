@@ -1273,6 +1273,7 @@ function renderTeamRoster(){
       </div>
       ${salaryDisplay}
       <p><small style="color:#999">${t('joined')}: ${member.joinDate}</small></p>
+      <button onclick="deleteTeamMember('${member.id}')" style="margin-top:8px;background:#e74c3c;color:#fff;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:0.85em">🗑 លុប</button>
     `
     container.appendChild(card)
   })
@@ -1425,6 +1426,18 @@ function renderRecommendedTeamPositions(){
       </tbody>
     </table>
   `
+}
+
+function deleteTeamMember(id){
+  const idx = teamMembers.findIndex(m => m.id === id)
+  if(idx === -1) return
+  const confirmDelete = confirm(`លុបសមាជិក "${teamMembers[idx].name}" មែនទេ?`)
+  if(!confirmDelete) return
+  teamMembers.splice(idx, 1)
+  renderTeamRoster()
+  renderTeamAssignments()
+  renderTeamPerformanceDashboard()
+  renderPayrollSummary()
 }
 
 function clearTeamRoster(){
