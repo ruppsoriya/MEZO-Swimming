@@ -207,7 +207,7 @@ function calculatePackagePrice(packageName) {
 const packagePricingStructure = {
   'Private class': {
     description: '1-on-1 personalized coaching',
-    coachAssigned: ['Coach Maria', 'Coach David'],
+    coachAssigned: ['Coach Soriya'],
     avgRate: '$15-18/hr',
     duration: '1 hour',
     calculation: '($16.50 avg × 1h) + $15 overhead + 5% commission + 10% pool = ~$50',
@@ -220,7 +220,7 @@ const packagePricingStructure = {
   },
   'Group class': {
     description: 'Group swim lessons (3-8 students)',
-    coachAssigned: ['Coach Maria', 'Coach David', 'Coach Sokha'],
+    coachAssigned: ['Coach Soriya'],
     avgRate: '$13-16/hr',
     duration: '1 hour',
     calculation: '($14.67 avg × 1h) + $10 overhead + 5% commission + 10% pool = ~$28/session',
@@ -230,7 +230,7 @@ const packagePricingStructure = {
   },
   'Kid package': {
     description: 'Children ages 4-12 (45 minutes)',
-    coachAssigned: ['Coach Maria', 'Coach Lisa', 'Coach Sokha'],
+    coachAssigned: ['Coach Soriya', 'Coach Sora'],
     avgRate: '$14-15/hr',
     duration: '45 minutes',
     calculation: '($14.50 avg × 0.75h) + $8 overhead + 5% commission + 10% pool = ~$22/session',
@@ -240,7 +240,7 @@ const packagePricingStructure = {
   },
   'School package': {
     description: 'Custom school contract (1.5 hours)',
-    coachAssigned: ['Coach David'],
+    coachAssigned: ['Coach Soriya'],
     rate: '$18/hr',
     duration: '1.5 hours',
     calculation: '($18 × 1.5h) + $20 overhead + 5% commission + 10% pool = ~$60-65/session',
@@ -250,7 +250,7 @@ const packagePricingStructure = {
   },
   'Fitness package': {
     description: 'Adult fitness (1 hour)',
-    coachAssigned: ['Coach Lisa'],
+    coachAssigned: ['Coach Soriya'],
     rate: '$14/hr',
     duration: '1 hour',
     calculation: '($14 × 1h) + $12 overhead + 5% commission + 10% pool = ~$30/session',
@@ -260,7 +260,7 @@ const packagePricingStructure = {
   },
   'Company package': {
     description: 'Corporate team building (2 hours)',
-    coachAssigned: ['Coach Lisa'],
+    coachAssigned: ['Coach Soriya'],
     rate: '$14/hr',
     duration: '2 hours',
     calculation: '($14 × 2h) + $30 overhead + 5% commission + 10% pool = ~$51/event',
@@ -270,7 +270,7 @@ const packagePricingStructure = {
   },
   'Competition event package': {
     description: 'Competition prep (1.5 hours)',
-    coachAssigned: ['Coach David'],
+    coachAssigned: ['Coach SOriya'],
     rate: '$18/hr',
     duration: '1.5 hours',
     calculation: '($18 × 1.5h) + $25 overhead + 5% commission + 10% pool = ~$56/session',
@@ -280,7 +280,7 @@ const packagePricingStructure = {
   },
   'Pool party event package': {
     description: 'Birthday/celebration (3 hours)',
-    coachAssigned: ['Coach Maria', 'Coach Lisa', 'Driver'],
+    coachAssigned: ['Coach Soriya'],
     avgRate: '$10-15/hr',
     duration: '3 hours',
     calculation: '($12.50 avg × 3h) + $40 overhead + 5% commission + 10% pool = ~$85-90/event',
@@ -306,7 +306,7 @@ const packagePricingStructure = {
   },
   'Train to Swimming coach package': {
     description: 'Coach certification (2-hour sessions)',
-    coachAssigned: ['Coach David'],
+    coachAssigned: ['Coach Soriya'],
     rate: '$18/hr',
     duration: '2 hours per session',
     calculation: '($18 × 2h) + $35 overhead + 5% commission + 10% pool = ~$86/session × 12 = $1032/total',
@@ -318,7 +318,7 @@ const packagePricingStructure = {
   },
   'Speaker': {
     description: 'Event speaker/announcer (2 hours)',
-    coachAssigned: ['Sarah (Admin)'],
+    coachAssigned: ['Soriya)'],
     duration: '2 hours',
     calculation: 'Custom rate + $20 overhead + 5% commission + 10% pool = $120-180+',
     priceModel: 'By event',
